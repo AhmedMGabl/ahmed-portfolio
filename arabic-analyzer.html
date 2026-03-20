@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Arabic Text Analyzer</title>
+<meta name="description" content="Free tool to analyze Arabic text. Detect sentiment, identify dialect, extract entities.">
+<style>
+:root{--bg:#0a0a0a;--surface:#141414;--border:#262626;--text:#fafafa;--muted:#a1a1aa;--accent:#3b82f6;--green:#22c55e;--red:#ef4444;--yellow:#eab308}*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}.container{max-width:720px;margin:0 auto;padding:24px}header{text-align:center;padding:48px 0 32px}h1{font-size:28px;font-weight:700;margin-bottom:8px}.subtitle{color:var(--muted);font-size:15px;margin-bottom:24px}textarea{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:12px;padding:16px;font-size:16px;font-family:inherit;resize:vertical;min-height:120px;direction:rtl;text-align:right}textarea:focus{outline:none;border-color:var(--accent)}.btn-row{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}button{background:var(--accent);color:white;border:none;padding:10px 20px;border-radius:8px;font-size:14px;cursor:pointer}button:hover{opacity:0.9}.results{margin-top:24px}.result-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}.result-card h3{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}.big-result{font-size:28px;font-weight:700}.confidence{font-size:14px;color:var(--muted);margin-top:4px}.positive{color:var(--green)}.negative{color:var(--red)}.neutral{color:var(--yellow)}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tag{background:rgba(59,130,246,0.15);color:var(--accent);padding:4px 10px;border-radius:6px;font-size:13px}footer{text-align:center;padding:48px 0 24px;color:var(--muted);font-size:13px}footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Arabic Text Analyzer</h1>
+<p class="subtitle">Detect sentiment, identify dialect, extract entities from Arabic text</p>
+</header>
+<textarea id="input" placeholder="Type Arabic text here"></textarea>
+<div class="btn-row">
+<button onclick="run('sentiment')">Sentiment</button>
+<button onclick="run('detect-dialect')">Dialect</button>
+<button onclick="run('preprocess')">Preprocess</button>
+<button onclick="run('entities')">Entities</button>
+</div>
+<div class="results" id="results"></div>
+<footer>
+<p>Powered by <a href="https://github.com/AhmedMGabl/arabic-nlp-api">Arabic NLP API</a></p>
+<p>Built by <a href="https://github.com/AhmedMGabl">Ahmed Abogabl</a> — <a href="mailto:Ahmed.Abogabl828@gmail.com">Hire me</a></p>
+</footer>
+</div>
+<script>
+const API='https://thorough-perception-production-8028.up.railway.app/v1';
+async function run(ep){const t=document.getElementById('input').value.trim();if(!t)return;const r=document.getElementById('results');r.textContent='Analyzing...';try{const res=await fetch(API+'/'+ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t})});const d=await res.json();const card=document.createElement('div');card.className='result-card';const h=document.createElement('h3');h.textContent=ep.replace('-',' ');card.appendChild(h);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.style.fontSize='14px';pre.textContent=JSON.stringify(d,null,2);card.appendChild(pre);r.textContent='';r.appendChild(card)}catch(e){r.textContent='Error: '+e.message}}
+</script>
+</body>
+</html>
