@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Abogabl — AI Engineer</title>
+    <meta name="description" content="AI Engineer specializing in Voice AI, Arabic NLP, RAG Systems, and MCP Protocol. 23+ production apps. Available for freelance.">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --border: #262626;
+            --text: #fafafa;
+            --muted: #a1a1aa;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --green: #22c55e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header { padding: 80px 0 40px; text-align: center; }
+        .status { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--green); margin-bottom: 16px; }
+        .status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        h1 { font-size: 40px; font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
+        .subtitle { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 24px; }
+        .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .links a {
+            color: var(--muted); text-decoration: none; font-size: 14px;
+            padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .links a:hover { color: var(--text); border-color: var(--accent); background: rgba(59,130,246,0.1); }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 40px 0; border-bottom: 1px solid var(--border); }
+        .stat { text-align: center; }
+        .stat-number { font-size: 32px; font-weight: 700; color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--muted); }
+
+        /* Sections */
+        section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+        h2 { font-size: 24px; font-weight: 600; margin-bottom: 24px; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .skill-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; transition: border-color 0.2s;
+        }
+        .skill-card:hover { border-color: var(--accent); }
+        .skill-card h3 { font-size: 16px; margin-bottom: 8px; }
+        .skill-card p { font-size: 13px; color: var(--muted); }
+        .skill-tag {
+            display: inline-block; font-size: 11px; padding: 2px 8px; margin: 4px 4px 0 0;
+            background: rgba(59,130,246,0.15); color: var(--accent); border-radius: 4px;
+        }
+
+        /* Services */
+        .service-list { display: flex; flex-direction: column; gap: 12px; }
+        .service {
+            display: flex; justify-content: space-between; align-items: center;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px 24px; transition: border-color 0.2s;
+        }
+        .service:hover { border-color: var(--accent); }
+        .service-name { font-weight: 500; }
+        .service-desc { font-size: 13px; color: var(--muted); }
+        .service-price { font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+        /* CTA */
+        .cta { padding: 60px 0; text-align: center; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white; text-decoration: none;
+            padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 16px;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover { background: var(--accent-hover); }
+        .cta p { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+        /* Footer */
+        footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 13px; }
+
+        @media (max-width: 600px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="status">Available for freelance work</div>
+            <h1>Ahmed Abogabl</h1>
+            <p class="subtitle">AI Engineer building production systems — Voice AI, Arabic NLP, RAG, and MCP Protocol. Based in Cairo, serving globally.</p>
+            <div class="links">
+                <a href="https://github.com/AhmedMGabl">GitHub</a>
+                <a href="https://linkedin.com/in/ahmedabogabl">LinkedIn</a>
+                <a href="mailto:Ahmed.Abogabl828@gmail.com">Email</a>
+            </div>
+        </header>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">23+</div>
+                <div class="stat-label">Production Apps</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Concurrent Voice Sessions</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">874K</div>
+                <div class="stat-label">Lines of MCP Code</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">89%+</div>
+                <div class="stat-label">RAG Retrieval Precision</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Core Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Voice AI</h3>
+                    <p>Production voice systems at scale with sub-300ms latency</p>
+                    <span class="skill-tag">VAPI</span>
+                    <span class="skill-tag">LiveKit</span>
+                    <span class="skill-tag">Whisper</span>
+                    <span class="skill-tag">Deepgram</span>
+                    <span class="skill-tag">ElevenLabs</span>
+                </div>
+                <div class="skill-card">
+                    <h3>Arabic NLP</h3>
+                    <p>Native speaker. Bilingual AI systems for MENA operations</p>
+                    <span class="skill-tag">Dialect Detection</span>
+                    <span class="skill-tag">Sentiment</span>
+                    <span class="skill-tag">Speech Evaluation</span>
+                    <span class="skill-tag">MFA</span>
+                </div>
+                <div class="skill-card">
+                    <h3>RAG Systems</h3>
+                    <p>Production RAG with evaluation metrics and cost optimization</p>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">LangGraph</span>
+                    <span class="skill-tag">Ragas</span>
+                    <span class="skill-tag">pgvector</span>
+                    <span class="skill-tag">Pinecone</span>
+                </div>
+                <div class="skill-card">
+                    <h3>MCP Protocol</h3>
+                    <p>874K+ lines across 58 Claude Code plugins</p>
+                    <span class="skill-tag">FastMCP</span>
+                    <span class="skill-tag">Tool Servers</span>
+                    <span class="skill-tag">Claude Code</span>
+                </div>
+                <div class="skill-card">
+                    <h3>Full-Stack AI</h3>
+                    <p>Complete product development from design to deployment</p>
+                    <span class="skill-tag">Next.js 15</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Supabase</span>
+                </div>
+                <div class="skill-card">
+                    <h3>LLM Engineering</h3>
+                    <p>Multi-provider orchestration with 73% cost reduction</p>
+                    <span class="skill-tag">GPT-4</span>
+                    <span class="skill-tag">Claude</span>
+                    <span class="skill-tag">Gemini</span>
+                    <span class="skill-tag">Fine-tuning</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Services</h2>
+            <div class="service-list">
+                <div class="service">
+                    <div>
+                        <div class="service-name">Custom AI Chatbot with RAG</div>
+                        <div class="service-desc">AI that answers from your documents with 89%+ retrieval precision</div>
+                    </div>
+                    <div class="service-price">from $500</div>
+                </div>
+                <div class="service">
+                    <div>
+                        <div class="service-name">Voice AI Agent</div>
+                        <div class="service-desc">Production voice system using VAPI / LiveKit with analytics</div>
+                    </div>
+                    <div class="service-price">from $800</div>
+                </div>
+                <div class="service">
+                    <div>
+                        <div class="service-name">Arabic NLP Solutions</div>
+                        <div class="service-desc">Chatbots, sentiment analysis, speech evaluation in Arabic</div>
+                    </div>
+                    <div class="service-price">from $500</div>
+                </div>
+                <div class="service">
+                    <div>
+                        <div class="service-name">AI Automation Workflows</div>
+                        <div class="service-desc">n8n + LLM automation for your business processes</div>
+                    </div>
+                    <div class="service-price">from $300</div>
+                </div>
+                <div class="service">
+                    <div>
+                        <div class="service-name">MCP Server Development</div>
+                        <div class="service-desc">Custom MCP servers and Claude Code plugins</div>
+                    </div>
+                    <div class="service-price">from $500</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta">
+            <a href="mailto:Ahmed.Abogabl828@gmail.com" class="cta-btn">Get in Touch</a>
+            <p>Cairo, Egypt (UTC+2) &middot; Available for remote work worldwide</p>
+        </div>
+
+        <footer>
+            <p>Ahmed Abogabl &middot; AI Engineer &middot; Azure AI-102 Certified</p>
+        </footer>
+    </div>
+</body>
+</html>
